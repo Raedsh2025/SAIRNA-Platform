@@ -1,0 +1,205 @@
+/**
+ * إضافات على نظام التصميم الأصلي (sairna.css):
+ * الحالات التي يعتمدها React (loading/error/empty) وعناصر الخريطة SVG.
+ */
+
+.sairna-icon {
+  display: inline-block;
+  flex: none;
+  vertical-align: middle;
+}
+
+/* أيقونة الحقول داخل النموذج: نفس محاذاة الأيقونات الأصلية */
+.search-field > .sairna-icon {
+  flex-shrink: 0;
+  color: var(--primary);
+  margin-top: 12px;
+}
+
+.field-control > .sairna-icon {
+  color: var(--muted);
+  flex: none;
+}
+
+/* مخطط المقاعد */
+.bus-cabin {
+  display: grid;
+  gap: 7px;
+}
+
+.seat-aisle {
+  width: 15px;
+}
+
+.seat-btn:disabled {
+  cursor: not-allowed;
+}
+
+/* حالات التحميل والخطأ */
+.spinner {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border: 3px solid color-mix(in srgb, var(--primary) 22%, transparent);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: sairna-spin 0.75s linear infinite;
+}
+
+@keyframes sairna-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.state-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 46px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.state-box h3 {
+  margin: 0;
+  font-size: 17px;
+  color: var(--text);
+}
+
+.state-box p {
+  margin: 0;
+  max-width: 48ch;
+  font-size: 13px;
+}
+
+.state-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--surface-alt);
+  color: var(--primary);
+}
+
+.state-error .state-icon {
+  background: #fff2e8;
+  color: #c2410c;
+}
+
+.notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--soft-teal);
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, transparent);
+  color: #0b6b5f;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.8;
+}
+
+.notice-warn {
+  background: #fff7e8;
+  border-color: #f2ddb6;
+  color: #8a5a11;
+}
+
+.field-error {
+  display: block;
+  margin-top: 6px;
+  color: #c2410c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.form-error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 11px 13px;
+  border-radius: 11px;
+  background: #fef2f2;
+  border: 1px solid #fbd5d5;
+  color: #b91c1c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* الخريطة (SVG محلي بدل Leaflet/Google) */
+.map-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.map-canvas svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.home-route-map {
+  position: relative;
+  min-height: 300px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: linear-gradient(160deg, #e9f6f2, #d9ece6);
+}
+
+[data-theme='dark'] .home-route-map {
+  background: linear-gradient(160deg, #12313d, #0d2632);
+}
+
+.map-skeleton {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* شريط تقدّم الرحلة */
+.track-progress-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* تفاصيل صغيرة */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-muted {
+  color: var(--muted);
+}
+
+.inline-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.stack-12 {
+  display: grid;
+  gap: 12px;
+}

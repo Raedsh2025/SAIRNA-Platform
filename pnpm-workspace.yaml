@@ -1,0 +1,14 @@
+# pnpm 11 settings for this project.
+#
+# nodeLinker: hoisted - copies packages directly instead of symlinking,
+# which avoids Windows/OneDrive symlink failures on this path.
+nodeLinker: hoisted
+
+# pnpm 11 requires explicit approval for dependency build scripts.
+# esbuild runs a postinstall step that places its native binary (needed by Vite).
+allowBuilds:
+  esbuild: true
+
+# Do not auto-run "pnpm install" before every "pnpm run/dev".
+# Dependencies are already installed; run "pnpm install" manually when package.json changes.
+verifyDepsBeforeRun: false
