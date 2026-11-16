@@ -1,7 +1,4 @@
-/**
- * أدوات قراءة مواصفة OpenAPI/Swagger في وقت التشغيل
- * (للعرض والاستكشاف فقط، وليست بديلًا عن التوليد الآلي في src/api/schema.d.ts).
- */
+
 
 export interface OpenApiDocument {
   openapi?: string;
