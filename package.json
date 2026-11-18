@@ -5,7 +5,7 @@
   "type": "module",
   "description": "واجهة سيرنا — React + TypeScript مرتبطة بخادم SAIRNA عبر HTTP",
   "engines": {
-    "node": ">=20"
+    "node": "24.x"
   },
   "scripts": {
     "dev": "vite",
